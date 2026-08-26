@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07 - Remove Elements | DOM Learning</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; padding: 20px; display: flex; justify-content: center; }
+    .container { background: #ffffff; max-width: 800px; width: 100%; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    h1 { color: #2c3e50; margin-bottom: 10px; font-size: 1.8rem; border-bottom: 2px solid #3498db; padding-bottom: 8px; }
+    p.description { color: #666; margin-bottom: 20px; }
+    .section { background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+    
+    ul.item-list { list-style: none; padding: 0; margin-top: 10px; }
+    ul.item-list li {
+      background-color: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 10px 15px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    ul.item-list li:hover { background-color: #f1f5f9; }
+    ul.item-list li.selected {
+      border-color: #e74c3c;
+      background-color: #fde8e8;
+    }
+
+    .button-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+    button { background-color: #3498db; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; }
+    button:hover { background-color: #2980b9; }
+    button.danger { background-color: #e74c3c; }
+    button.danger:hover { background-color: #c0392b; }
+    .output-box { background-color: #1e293b; color: #38bdf8; padding: 15px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; min-height: 60px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>07 - Removing DOM Elements</h1>
+    <p class="description">Learn how to delete elements from the page using modern remove() and traditional removeChild().</p>
+
+    <div class="button-group">
+      <button id="btn-remove-first">Remove First Item (removeChild)</button>
+      <button id="btn-remove-last" class="danger">Remove Last Item (remove)</button>
+      <button id="btn-remove-selected" class="danger">Remove Selected Item</button>
+    </div>
+
+    <div class="section">
+      <p style="font-size: 0.85rem; color: #64748b;">(Click any item below to select/highlight it)</p>
+      <ul id="my-list" class="item-list">
+        <li>Item 1 - Standard List Item</li>
+        <li>Item 2 - Standard List Item</li>
+        <li>Item 3 - Standard List Item</li>
+        <li>Item 4 - Standard List Item</li>
+      </ul>
+    </div>
+
+    <h3>Removal Log:</h3>
+    <div id="output" class="output-box">Click a removal button above.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

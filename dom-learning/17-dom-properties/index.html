@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17 - DOM Properties | DOM Learning</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; padding: 20px; display: flex; justify-content: center; }
+    .container { background: #ffffff; max-width: 800px; width: 100%; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    h1 { color: #2c3e50; margin-bottom: 10px; font-size: 1.8rem; border-bottom: 2px solid #3498db; padding-bottom: 8px; }
+    p.description { color: #666; margin-bottom: 20px; }
+    .section { background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+    
+    .prop-row { margin-bottom: 15px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+    label { font-weight: 600; color: #475569; min-width: 120px; }
+
+    .button-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+    button { background-color: #3498db; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; }
+    button:hover { background-color: #2980b9; }
+
+    .output-box { background-color: #1e293b; color: #38bdf8; padding: 15px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; min-height: 120px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>17 - Essential DOM Properties</h1>
+    <p class="description">Master reading and modifying core JavaScript DOM properties on standard form and content elements.</p>
+
+    <div class="section">
+      <!-- Input -->
+      <div class="prop-row">
+        <label for="demo-input">Input Value:</label>
+        <input type="text" id="demo-input" value="Hello JavaScript">
+      </div>
+
+      <!-- Checkbox -->
+      <div class="prop-row">
+        <label for="demo-checkbox">Checkbox:</label>
+        <input type="checkbox" id="demo-checkbox" checked>
+        <span>Accept Terms & Conditions</span>
+      </div>
+
+      <!-- Select Dropdown -->
+      <div class="prop-row">
+        <label for="demo-select">Framework:</label>
+        <select id="demo-select">
+          <option value="spring">Spring Boot</option>
+          <option value="react" selected>React</option>
+          <option value="angular">Angular</option>
+        </select>
+      </div>
+
+      <!-- Link -->
+      <div class="prop-row">
+        <label>Link Element:</label>
+        <a id="demo-link" href="https://oracle.com/java" target="_blank">Oracle Java Portal</a>
+      </div>
+
+      <!-- Paragraph -->
+      <div class="prop-row">
+        <label>Paragraph:</label>
+        <p id="demo-para" class="info-text highlight">Sample paragraph with class="info-text highlight"</p>
+      </div>
+
+      <!-- Action Button -->
+      <div class="prop-row">
+        <label>Action Button:</label>
+        <button id="demo-button">Interactive Target Button</button>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button id="btn-read-props">Read All Properties</button>
+      <button id="btn-toggle-states">Toggle Disabled & Checked</button>
+      <button id="btn-change-link">Change href & value</button>
+    </div>
+
+    <h3>Property Values Output:</h3>
+    <div id="output" class="output-box">Click "Read All Properties" to inspect current values.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

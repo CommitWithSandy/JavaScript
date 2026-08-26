@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 - Attributes | DOM Learning</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; padding: 20px; display: flex; justify-content: center; }
+    .container { background: #ffffff; max-width: 800px; width: 100%; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    h1 { color: #2c3e50; margin-bottom: 10px; font-size: 1.8rem; border-bottom: 2px solid #3498db; padding-bottom: 8px; }
+    p.description { color: #666; margin-bottom: 20px; }
+    .section { background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; text-align: center; }
+    
+    .demo-element { margin: 15px 0; }
+    img { max-width: 150px; border-radius: 8px; border: 2px solid #cbd5e1; }
+    a { color: #3498db; font-weight: 600; text-decoration: none; font-size: 1.1rem; }
+
+    .button-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+    button { background-color: #3498db; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; }
+    button:hover { background-color: #2980b9; }
+    .output-box { background-color: #1e293b; color: #38bdf8; padding: 15px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; min-height: 80px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>04 - HTML Attributes</h1>
+    <p class="description">Learn how to read, create, check, and remove HTML attributes dynamically.</p>
+
+    <div class="section">
+      <div class="demo-element">
+        <!-- Sample Link -->
+        <a id="my-link" href="https://developer.mozilla.org" target="_self" title="Go to MDN Documentation">Visit MDN Web Docs</a>
+      </div>
+
+      <div class="demo-element">
+        <!-- Sample Image -->
+        <img id="my-image" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'><rect width='100%' height='100%' fill='%233498db'/><text x='50%' y='50%' fill='white' dominant-baseline='middle' text-anchor='middle' font-size='16'>Initial Image</text></svg>" alt="Blue Box Placeholder" title="SVG Placeholder">
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button id="btn-get">getAttribute()</button>
+      <button id="btn-set">setAttribute()</button>
+      <button id="btn-has">hasAttribute()</button>
+      <button id="btn-remove">removeAttribute()</button>
+    </div>
+
+    <h3>Attribute Inspection Output:</h3>
+    <div id="output" class="output-box">Click any button to interact with element attributes.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09 - Events | DOM Learning</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; padding: 20px; display: flex; justify-content: center; }
+    .container { background: #ffffff; max-width: 800px; width: 100%; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    h1 { color: #2c3e50; margin-bottom: 10px; font-size: 1.8rem; border-bottom: 2px solid #3498db; padding-bottom: 8px; }
+    p.description { color: #666; margin-bottom: 20px; }
+    .section { background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; }
+    
+    .interactive-card {
+      width: 250px;
+      padding: 30px 20px;
+      background-color: #e2e8f0;
+      color: #334155;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.3s ease;
+    }
+
+    .button-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+    button { background-color: #3498db; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; }
+    button:hover { background-color: #2980b9; }
+    .output-box { background-color: #1e293b; color: #38bdf8; padding: 15px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; min-height: 80px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>09 - Basic DOM Events</h1>
+    <p class="description">Learn how to listen for user interactions using element.addEventListener().</p>
+
+    <div class="button-group">
+      <button id="btn-click">Single Click Button</button>
+      <button id="btn-dblclick">Double Click Button</button>
+    </div>
+
+    <div class="section">
+      <div id="hover-card" class="interactive-card">
+        Hover over me or click me!
+      </div>
+    </div>
+
+    <h3>Event Log:</h3>
+    <div id="output" class="output-box">Perform actions on the buttons or card above to trigger events.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

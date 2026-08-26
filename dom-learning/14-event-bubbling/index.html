@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>14 - Event Bubbling | DOM Learning</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; padding: 20px; display: flex; justify-content: center; }
+    .container { background: #ffffff; max-width: 800px; width: 100%; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    h1 { color: #2c3e50; margin-bottom: 10px; font-size: 1.8rem; border-bottom: 2px solid #3498db; padding-bottom: 8px; }
+    p.description { color: #666; margin-bottom: 20px; }
+    .section { background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+    
+    /* Nested Container Hierarchy */
+    .grandparent {
+      background-color: #fde8e8;
+      border: 3px solid #e74c3c;
+      padding: 25px;
+      border-radius: 8px;
+    }
+    .parent {
+      background-color: #fef9c3;
+      border: 3px solid #f1c40f;
+      padding: 20px;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+    .child-btn {
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .output-box { background-color: #1e293b; color: #38bdf8; padding: 15px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; min-height: 120px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>14 - Event Bubbling & stopPropagation()</h1>
+    <p class="description">Understand how events bubble UP through parent elements in the DOM tree.</p>
+
+    <div class="section">
+      <!-- Grandparent -->
+      <div id="grandparent" class="grandparent">
+        <h3>Grandparent (Red Box)</h3>
+        
+        <!-- Parent -->
+        <div id="parent" class="parent">
+          <h4>Parent (Yellow Box)</h4>
+          
+          <!-- Child -->
+          <button id="child-normal" class="child-btn">Click Child (Bubbles Normal)</button>
+          <button id="child-stop" class="child-btn" style="background-color: #9b59b6;">Click Child (Stops Propagation)</button>
+        </div>
+      </div>
+    </div>
+
+    <h3>Bubbling Order Log:</h3>
+    <div id="output" class="output-box">Click a child button to observe event bubbling propagation.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

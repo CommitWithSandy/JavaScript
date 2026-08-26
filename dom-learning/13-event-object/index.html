@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13 - Event Object | DOM Learning</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; padding: 20px; display: flex; justify-content: center; }
+    .container { background: #ffffff; max-width: 800px; width: 100%; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    h1 { color: #2c3e50; margin-bottom: 10px; font-size: 1.8rem; border-bottom: 2px solid #3498db; padding-bottom: 8px; }
+    p.description { color: #666; margin-bottom: 20px; }
+    .section { background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+    
+    #parent-box {
+      background: #e2e8f0;
+      padding: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .inner-btn {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .output-box { background-color: #1e293b; color: #38bdf8; padding: 15px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; min-height: 120px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>13 - The Event Object</h1>
+    <p class="description">Learn about the automatically passed event (e) object and its key properties.</p>
+
+    <div class="section">
+      <!-- Container with listener to show target vs currentTarget -->
+      <div id="parent-box">
+        <h3>Outer Parent Container (Listener attached here)</h3>
+        <p style="margin: 10px 0;">Click on this text or click the red button inside:</p>
+        <button id="child-btn" class="inner-btn">Inner Child Button</button>
+      </div>
+    </div>
+
+    <h3>Event Object Inspector:</h3>
+    <div id="output" class="output-box">Click anywhere inside the gray parent container to inspect the Event object.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

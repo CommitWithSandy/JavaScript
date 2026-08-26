@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08 - DOM Traversal | DOM Learning</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; padding: 20px; display: flex; justify-content: center; }
+    .container { background: #ffffff; max-width: 800px; width: 100%; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    h1 { color: #2c3e50; margin-bottom: 10px; font-size: 1.8rem; border-bottom: 2px solid #3498db; padding-bottom: 8px; }
+    p.description { color: #666; margin-bottom: 20px; }
+    .section { background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+    
+    /* Traversal Test Structure */
+    .parent-box {
+      border: 2px solid #3498db;
+      padding: 15px;
+      border-radius: 8px;
+      background: #eef2f7;
+    }
+    .child-p {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 4px;
+    }
+    .highlight-node {
+      border: 2px solid #e74c3c !important;
+      background: #fde8e8 !important;
+      font-weight: bold;
+    }
+
+    .button-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+    button { background-color: #3498db; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500; }
+    button:hover { background-color: #2980b9; }
+    .output-box { background-color: #1e293b; color: #38bdf8; padding: 15px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; min-height: 80px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>08 - DOM Traversal</h1>
+    <p class="description">Learn how to navigate UP, DOWN, and SIDEWAYS through the DOM tree structure.</p>
+
+    <div class="section">
+      <!-- Grandparent / Parent / Child Structure -->
+      <div id="parent-container" class="parent-box">
+        <h3>Parent Container (div#parent-container)</h3>
+        <p id="p-first" class="child-p">First Paragraph (p#p-first)</p>
+        <p id="p-middle" class="child-p">Middle Paragraph (p#p-middle)</p>
+        <p id="p-last" class="child-p">Last Paragraph (p#p-last)</p>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button id="btn-parent">parentElement</button>
+      <button id="btn-children">children vs childNodes</button>
+      <button id="btn-first-last">first / lastElementChild</button>
+      <button id="btn-siblings">next / previousElementSibling</button>
+      <button id="btn-closest">closest('.container')</button>
+    </div>
+
+    <h3>Traversal Result Log:</h3>
+    <div id="output" class="output-box">Click any traversal button to test DOM navigation.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
